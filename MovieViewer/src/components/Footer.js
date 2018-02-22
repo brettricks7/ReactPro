@@ -9,10 +9,12 @@ const styles = theme => ({
     paddingTop: 30,
     paddingBottom: 16,
     marginTop: theme.spacing.unit * 3, 
-    //width: "90%",
-   // height: "10vh", 
+    width: "90%",
+    height: "10vh", 
     "text-align": "center",
     "font-size": "30px",
+    position: "absolute",
+    bottom:0,
   }),
 });
 
@@ -23,7 +25,6 @@ function Footer(props) {
       <Paper className={classes.root} elevation={4}>
         <Typography variant="headline" component="h1">
           Different buttons down here
-          
         </Typography>
       </Paper>
     </div>

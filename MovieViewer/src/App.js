@@ -8,8 +8,8 @@ import Footer from './components/Footer.js'
 
 const styles = theme => ({
   root: {
-    height: "95vh",
-    width: "95vw",
+    height: "100vh",
+    width: "100vw",
     marginLeft: theme.spacing.unit * 5,
     marginRight: theme.spacing.unit * 5,
     },
