@@ -5,15 +5,15 @@ import Paper from 'material-ui/Paper';
 import Typography from 'material-ui/Typography';
 
 const styles = theme => ({
-  root: theme.mixins.gutters({
+  root: {
     paddingTop: 30,
-    paddingBottom: 16,
-    marginTop: theme.spacing.unit * 3, 
-    width: "90%",
+    paddingBottom: 30,
+    marginTop: 20, 
+    width: "90vw",
     height: "10vh", 
     "text-align": "center",
     "font-size": "30px",
-  }),
+  },
 });
 
 function Header(props) {

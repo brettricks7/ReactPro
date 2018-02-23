@@ -1,40 +1,49 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { withStyles } from 'material-ui/styles';
-import Card, { CardContent } from 'material-ui/Card';
+import Card, { CardActions, CardContent, CardMedia } from 'material-ui/Card';
+import Button from 'material-ui/Button';
 import Typography from 'material-ui/Typography';
 
-const styles = theme => ({
-    card: {
-      minWidth: 300,
-      maxWidth: '30%',
-    },
-    bullet: {
-      display: 'inline-block',
-      margin: '0 2px',
-      transform: 'scale(0.8)',
-    },
-    title: {
-      marginBottom: 16,
-      fontSize: 24,
-      color: theme.palette.text.secondary,
-    },
-    pos: {
-      marginBottom: 12,
-      color: theme.palette.text.secondary,
-    },
-  });
-
+const styles = {
+  card: {
+    width: "50vh",
+  },
+  media: {
+    height: 200,
+  },
+};
 class Movie extends Component {
     render() {
         return (
-            <Card className={this.props.classes.card}>
-                <CardContent>
-                    <Typography className={this.props.classes.title}> {this.props.name} </Typography>
-                    <Typography component="p"> Movie desc could go here. </Typography>
-                </CardContent>
-            </Card>
-        );
+        <div>
+          <Card className={this.props.classes.card}>
+            <CardMedia
+              className={this.props.classes.media}
+              image ="http://via.placeholder.com/350x350"
+              title="Movie"
+            />
+            <CardContent>
+              <Typography variant="headline" component="h2" className={this.props.classes.title}> {this.props.name}</Typography>
+              <Typography component="p">
+                Movie Description
+              </Typography>
+            </CardContent>
+            <CardActions>
+              <Button size="small" color="primary">
+                Add to Favorites
+              </Button>
+              <Button size="sm all" color="primary">
+                Watched
+              </Button>
+            </CardActions>
+          </Card>
+        </div>
+      );
     }
 }
+Movie.propTypes = {
+  classes: PropTypes.object.isRequired,
+};
 
 export default withStyles(styles)(Movie);
