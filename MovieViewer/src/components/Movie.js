@@ -33,7 +33,7 @@ class Movie extends Component {
               <Button size="small" color="primary">
                 Add to Favorites
               </Button>
-              <Button size="sm all" color="primary">
+              <Button size="small" color="primary">
                 Watched
               </Button>
             </CardActions>

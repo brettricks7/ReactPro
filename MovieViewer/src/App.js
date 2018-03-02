@@ -14,11 +14,6 @@ const styles = theme => ({
         "text-align": 'left',
         leftpadding: '20px',
     },
-  page: {
-    height: "95%",
-    width: "95%",
-    paddingLeft: 70,
-  },
 });
 
 class App extends Component {
@@ -32,13 +27,11 @@ class App extends Component {
   render() {
     return (
       <div className={this.props.classes.root}>
-        <div className={this.props.classes.page}>
           <Header/>
           <div className={this.props.classes.leftdrawer}>
             <FilterDrawer/>
           </div>
           <MovieContainer movies={this.state.movies}/>
-        </div>
       </div>
     );
   }

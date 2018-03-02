@@ -6,13 +6,14 @@ import Typography from 'material-ui/Typography';
 
 const styles = theme => ({
   root: {
-    paddingTop: 30,
     paddingBottom: 30,
-    marginTop: 20, 
-    width: "90vw",
+    marginTop: 0, 
+    width: "100%",
     height: "10vh", 
     "text-align": "center",
     "font-size": "30px",
+    position: "fixed",
+    top: 0,
   },
 });
 

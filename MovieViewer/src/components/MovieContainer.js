@@ -1,8 +1,14 @@
 import React, { Component } from 'react';
 import Movie from './Movie.js';
 import { withStyles } from 'material-ui/styles';
-import styles from './MovieContainerStyles';
 import Grid from 'material-ui/Grid';
+
+const styles = theme => ({
+  root: {
+    flexGrow: 1,
+    
+  },
+});
 
 class MovieContainer extends Component {
     render() {
