@@ -7,13 +7,14 @@ import Typography from 'material-ui/Typography';
 const styles = theme => ({
   root: {
     paddingBottom: 30,
-    marginTop: 0, 
+    marginTop: 0,
     width: "100%",
-    height: "10vh", 
+    height: "10vh",
     "text-align": "center",
     "font-size": "30px",
     position: "fixed",
     top: 0,
+    "z-index": 1000,
   },
 });
 

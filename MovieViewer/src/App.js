@@ -5,10 +5,12 @@ import FilterDrawer from './components/FilterDrawer.js';
 import { withStyles } from 'material-ui/styles';
 import Header from './components/Header.js';
 
+
 const styles = theme => ({
   root: {
     height: "100%",
-    width: "100%",
+    width: "100vw" ,
+    background: "#a8dea3",
     },
   leftdrawer: {
         "text-align": 'left',

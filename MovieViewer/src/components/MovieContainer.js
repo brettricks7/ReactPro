@@ -6,24 +6,30 @@ import Grid from 'material-ui/Grid';
 const styles = theme => ({
   root: {
     flexGrow: 1,
-    
+    position: "relative",
+    paddingTop: "10vh",
+    // marginLeft: "10vw",
+    // marginRight: "10vw",
+
   },
 });
 
 class MovieContainer extends Component {
     render() {
         return (
-            <Grid container className={this.props.classes.root}>
-                {this.props.movies.map(
-                    (movie => {
-                        return (
-                            <Grid key={movie} item> 
-                                 <Movie name={movie} />
-                            </Grid>
-                        );
-                    })
-                )}
-            </Grid>
+            <div className={this.props.classes.root}>
+              <Grid container spacing={24}>
+                  {this.props.movies.map(
+                      (movie => {
+                          return (
+                              <Grid key={movie} item xs= {12}>
+                                   <Movie name={movie} />
+                              </Grid>
+                          );
+                      })
+                  )}
+              </Grid>
+            </div>
         );
     }
 }
