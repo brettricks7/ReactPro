@@ -7,7 +7,7 @@ const styles = theme => ({
   root: {
     flexGrow: 1,
     position: "relative",
-    paddingTop: "10vh",
+    paddingTop: "25vh",
     // marginLeft: "10vw",
     // marginRight: "10vw",
 

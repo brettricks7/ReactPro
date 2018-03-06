@@ -6,6 +6,7 @@ import Button from 'material-ui/Button';
 const styles = {
   list: {
     width: '33vw',
+    'z-index': 1001,
   },
   listFull: {
     width: '50%',
@@ -26,7 +27,7 @@ class FilterDrawer extends React.Component {
   render() {
     return (
       <div>
-        <Button onClick={this.toggleDrawer(true)}>Filter</Button>
+        <Button onClick={this.toggleDrawer(true)} variant="raised" color="primary" className={this.props.classes.button}>Filter</Button>
         <Drawer open={this.state.drawer} onClose={this.toggleDrawer(false)}>
           <div className={this.props.classes.list}
             tabIndex={0}

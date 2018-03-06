@@ -10,11 +10,16 @@ const styles = theme => ({
   root: {
     height: "100%",
     width: "100vw" ,
-    background: "#a8dea3",
+    background: "rgb(193, 193, 193)",
     },
   leftdrawer: {
-        "text-align": 'left',
-        leftpadding: '20px',
+    "text-align": 'left',
+    leftpadding: '20px',
+    position: 'fixed',
+    paddingTop: '50vh',
+    // background: 'rgb(0, 0, 0)',
+    // "font-color": 'rgb(254, 254, 254)',
+    "z-index": 1000,
     },
 });
 
