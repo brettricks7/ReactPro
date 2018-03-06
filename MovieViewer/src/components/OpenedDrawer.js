@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from 'material-ui/styles';
-import MenuItem from 'material-ui/Menu/MenuItem';
 import TextField from 'material-ui/TextField';
 import ToggleSwitches from './ToggleSwitches.js';
 import Button from 'material-ui/Button';
@@ -9,7 +8,9 @@ import Button from 'material-ui/Button';
 const styles = theme => ({
   container: {
     display: 'flex',
-    flexWrap: 'wrap',
+    // flexWrap: 'wrap',
+    "flex-direction": "column",
+    "justify-content": "flex-start",
   },
   textField: {
     marginLeft: theme.spacing.unit,
@@ -69,25 +70,6 @@ class OpenedDrawer extends React.Component {
           label="Starts with..."
           placeholder="The Godfa"
           className={classes.textField}
-          margin="normal"
-          fullWidth
-        />
-        <TextField
-          id="multiline-flexible"
-          label="Multiline"
-          multiline
-          rowsMax="4"
-          value={this.state.multiline}
-          onChange={this.handleChange('multiline')}
-          className={classes.textField}
-          margin="normal"
-        />
-        <TextField
-          id="helperText"
-          label="Helper text"
-          defaultValue="Default Value"
-          className={classes.textField}
-          helperText="Some important text"
           margin="normal"
           fullWidth
         />

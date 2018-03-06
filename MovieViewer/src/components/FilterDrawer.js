@@ -2,7 +2,6 @@ import React from 'react';
 import { withStyles } from 'material-ui/styles';
 import Drawer from 'material-ui/Drawer';
 import Button from 'material-ui/Button';
-import PropTypes from 'prop-types';
 import OpenedDrawer from './OpenedDrawer.js';
 
 const styles = {
@@ -10,8 +9,8 @@ const styles = {
     width: '33vw',
     'z-index': 1001,
   },
-  listFull: {
-    width: '50%',
+  PaperProps: {
+    width: "33vw",
   },
 };
 
