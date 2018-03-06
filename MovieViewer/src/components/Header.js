@@ -6,12 +6,13 @@ import Typography from 'material-ui/Typography';
 
 const styles = theme => ({
   root: {
-    paddingBottom: 30,
+    display: "flex",
     marginTop: 0,
     width: "100%",
     height: "10vh",
-    "text-align": "center",
-    "font-size": "30px",
+    "justify-content": "center",
+    "alignItems": "center",
+    "font-size": "40px",
     position: "fixed",
     top: 0,
     "z-index": 1000,
@@ -22,8 +23,8 @@ function Header(props) {
   const { classes } = props;
   return (
     <div>
-      <Paper className={classes.root} elevation={4}>
-        <Typography variant="headline" component="h1">
+      <Paper className={classes.root}>
+        <Typography className={classes.root}>
           The Movie Thing
         </Typography>
       </Paper>

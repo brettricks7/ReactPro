@@ -17,8 +17,6 @@ const styles = theme => ({
     leftpadding: '20px',
     position: 'fixed',
     paddingTop: '50vh',
-    // background: 'rgb(0, 0, 0)',
-    // "font-color": 'rgb(254, 254, 254)',
     "z-index": 1000,
     },
 });

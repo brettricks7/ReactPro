@@ -2,6 +2,9 @@ import React from 'react';
 import { withStyles } from 'material-ui/styles';
 import Drawer from 'material-ui/Drawer';
 import Button from 'material-ui/Button';
+// import PropTypes from 'prop-types';
+// import MenuItem from 'material-ui/Menu/MenuItem';
+// import TextField from 'material-ui/TextField';
 
 const styles = {
   list: {
@@ -27,7 +30,7 @@ class FilterDrawer extends React.Component {
   render() {
     return (
       <div>
-        <Button onClick={this.toggleDrawer(true)} variant="raised" color="primary" className={this.props.classes.button}>Filter</Button>
+        <Button onClick={this.toggleDrawer(true)} variant="raised" color="primary" size='Large' className={this.props.classes.button}>Filter</Button>
         <Drawer open={this.state.drawer} onClose={this.toggleDrawer(false)}>
           <div className={this.props.classes.list}
             tabIndex={0}
