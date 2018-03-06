@@ -2,9 +2,8 @@ import React from 'react';
 import { withStyles } from 'material-ui/styles';
 import Drawer from 'material-ui/Drawer';
 import Button from 'material-ui/Button';
-// import PropTypes from 'prop-types';
-// import MenuItem from 'material-ui/Menu/MenuItem';
-// import TextField from 'material-ui/TextField';
+import PropTypes from 'prop-types';
+import OpenedDrawer from './OpenedDrawer.js';
 
 const styles = {
   list: {
@@ -37,7 +36,7 @@ class FilterDrawer extends React.Component {
             role="button"
             onClick={this.toggleDrawer(false)}
           >
-            <p>Opened Drawer</p>
+            <p><OpenedDrawer/></p>
           </div>
         </Drawer>
     </div>
