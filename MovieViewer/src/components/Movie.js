@@ -4,7 +4,6 @@ import { withStyles } from 'material-ui/styles';
 import Card, { CardActions, CardContent, CardMedia } from 'material-ui/Card';
 import Button from 'material-ui/Button';
 import Typography from 'material-ui/Typography';
-import MovieDesc from './MovieDesc.js'
 
 const styles = {
   card: {
@@ -46,7 +45,7 @@ class Movie extends Component {
             <CardContent>
               <Typography variant="headline" component="h2" className={this.props.classes.content}> {this.props.name}</Typography>
               <Typography variant="subheading" component="p" className={this.props.classes.content}>
-                <MovieDesc/>
+                Lorem ipsum dolor sit amet, ad per diceret aliquam fabellas, ut lorem populo pro. Has unum etiam indoctum te, ea eius euripidis usu, sea delenit rationibus constituto eu. Cu his cibo vocent laboramus, ne unum accumsan mei.
               </Typography>
             </CardContent>
             <CardActions>

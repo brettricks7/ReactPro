@@ -29,14 +29,13 @@ class FilterDrawer extends React.Component {
   render() {
     return (
       <div>
-        <Button onClick={this.toggleDrawer(true)} variant="raised" color="primary" size='Large' className={this.props.classes.button}>Filter</Button>
-        <Drawer open={this.state.drawer} onClose={this.toggleDrawer(false)}>
+        <Button onClick={this.toggleDrawer(true)} variant="raised" color="primary" size='large' className={this.props.classes.button}>Filter</Button>
+        <Drawer open={this.state.drawer}>
           <div className={this.props.classes.list}
             tabIndex={0}
             role="button"
-            onClick={this.toggleDrawer(false)}
           >
-            <p><OpenedDrawer/></p>
+            <OpenedDrawer toggleDrawer={this.toggleDrawer}/>
           </div>
         </Drawer>
     </div>

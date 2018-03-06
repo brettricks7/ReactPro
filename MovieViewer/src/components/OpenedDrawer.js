@@ -4,6 +4,7 @@ import { withStyles } from 'material-ui/styles';
 import MenuItem from 'material-ui/Menu/MenuItem';
 import TextField from 'material-ui/TextField';
 import ToggleSwitches from './ToggleSwitches.js';
+import Button from 'material-ui/Button';
 
 const styles = theme => ({
   container: {
@@ -18,26 +19,29 @@ const styles = theme => ({
   menu: {
     width: 200,
   },
+  button: {
+    // flexWrap: 'wrap',
+  },
 });
 
-const currencies = [
-  {
-    value: 'USD',
-    label: '$',
-  },
-  {
-    value: 'EUR',
-    label: '€',
-  },
-  {
-    value: 'BTC',
-    label: '฿',
-  },
-  {
-    value: 'JPY',
-    label: '¥',
-  },
-];
+// const currencies = [
+//   {
+//     value: 'USD',
+//     label: '$',
+//   },
+//   {
+//     value: 'EUR',
+//     label: '€',
+//   },
+//   {
+//     value: 'BTC',
+//     label: '฿',
+//   },
+//   {
+//     value: 'JPY',
+//     label: '¥',
+//   },
+// ];
 
 class OpenedDrawer extends React.Component {
   state = {
@@ -58,7 +62,7 @@ class OpenedDrawer extends React.Component {
 
     return (
       <form className={classes.container} noValidate autoComplete="off">
-          <ToggleSwitches/>
+        <ToggleSwitches/>
 
         <TextField
           id="full-width"
@@ -121,6 +125,7 @@ class OpenedDrawer extends React.Component {
           className={classes.textField}
           margin="normal"
         />
+        <Button onClick={this.props.toggleDrawer(false)} variant="raised" color="primary" size='large' className={this.props.classes.button}>Save</Button>
       </form>
     );
   }
