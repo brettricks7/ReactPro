@@ -8,31 +8,35 @@ import Typography from 'material-ui/Typography';
 const styles = {
   card: {
     display: 'flex',
+    "flex-direction": "row",
     width: "60vw",
     margin: "auto",
-    raised: "true",
-    elevation: 24,
-  },
-  media: {
-    height: "23vw",
-    width: "17.25vw",
+    "min-width": "600px",
+    "min-height": "250px",
+    "font-size": "calc( 14px + 8 * ((100vw - 500px) / 1500))",
   },
   tile: {
-    paddingLeft: "5px",
-    paddingTop: "5px",
+    "display": 'flex',
+    "flex-direction": "column",
+    "align-items": "stretch",
+    "flex": "1 auto",
   },
-  details: {
-    display: 'flex',
-    flexDirection: 'column',
+  media: {
+    "min-height": "23vw",
+    "min-width": "17.25vw",
+  },
+  actions: {
+    "flex-direction": "row",
   },
   content: {
-    flex: '1 0 auto',
-    height: "20vh",
-    width: "42.75vw",
+    "min-height": "15vh",
+    "min-width": "42.75vw",
   },
   controls: {
-    display: 'flex',
+    "display": 'flex',
     alignItems: 'center',
+    "flex-grow": 1,
+    "justify-content": "flex-end",
   },
 };
 class Movie extends Component {
@@ -40,23 +44,26 @@ class Movie extends Component {
         return (
         <div>
           <Card className={this.props.classes.card}>
-            <div className={this.props.classes.details}>
+            <div className={this.props.classes.tile}>
 
-            <CardContent>
-              <Typography variant="headline" component="h2" className={this.props.classes.content}> {this.props.name}</Typography>
-              <Typography variant="subheading" component="p" className={this.props.classes.content}>
-                Lorem ipsum dolor sit amet, ad per diceret aliquam fabellas, ut lorem populo pro. Has unum etiam indoctum te, ea eius euripidis usu, sea delenit rationibus constituto eu. Cu his cibo vocent laboramus, ne unum accumsan mei.
-              </Typography>
-            </CardContent>
-            <CardActions>
-              <Button size="small" color="primary" className={this.props.classes.controls}>
-                Add to Favorites
-              </Button>
-              <Button size="small" color="primary" className={this.props.classes.controls}>
-                Watched
-              </Button>
-            </CardActions>
-        </div>
+              <CardContent>
+                <Typography variant="headline" component="h2"> {this.props.name}</Typography>
+                <Typography variant="subheading" component="p" className={this.props.classes.content}>
+                  Lorem ipsum dolor sit amet, ad per diceret aliquam fabellas, ut lorem populo pro. Has unum etiam indoctum te, ea eius euripidis usu, sea delenit rationibus constituto eu. Cu his cibo vocent laboramus, ne unum accumsan mei.
+                </Typography>
+              </CardContent>
+              <CardActions className={this.props.classes.actions}>
+                <Button size="small" color="primary" className={this.props.classes.controls}>
+                  Add to Favorites
+                </Button>
+                <Button size="small" color="primary" className={this.props.classes.controls}>
+                  Watched
+                </Button>
+                <Button size="small" color="primary" className={this.props.classes.controls}>
+                  Trash
+                </Button>
+              </CardActions>
+            </div>
         <CardMedia
           className={this.props.classes.media}
           image ="https://image.tmdb.org/t/p/w342/d4KNaTrltq6bpkFS01pYtyXa09m.jpg"
