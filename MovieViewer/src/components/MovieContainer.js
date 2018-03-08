@@ -13,6 +13,7 @@ const styles = theme => ({
 });
 
 class MovieContainer extends Component {
+
     render() {
         return (
             <div className={this.props.classes.root}>
@@ -20,12 +21,12 @@ class MovieContainer extends Component {
                   {this.props.movies.map(
                       (movie => {
                           return (
-                              <Grid key={movie} item xs= {12}>
-                                   <Movie name={movie} />
+                              <Grid key={movie.title} item xs= {12}>
+                                   <Movie name={movie.title} overview={movie.overview}/>
                               </Grid>
                           );
                       })
-                  )}
+                  )},
               </Grid>
             </div>
         );

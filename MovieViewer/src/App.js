@@ -27,7 +27,7 @@ class App extends Component {
     super(props);
     this.state = {
       movies: ['Batman', 'Spiderman', 'The Hulk', 'Superman', 'Spiderman 2', 'The Worm'],
-      newMovies: [],
+      newMovies: []
     };
   }
 
@@ -44,9 +44,15 @@ class App extends Component {
     $.ajax(settings).done( response => {
       console.log(response)
       const movieNames = response.results.map(
-        (movie => { return movie.title })
+        (movie => {
+          const temp = new Object();
+          temp.title = movie.title;
+          temp.overview = movie.overview;
+          return temp })
       );
-      this.setState({ newMovies: movieNames });
+      console.log(movieNames);
+      this.setState({ newMovies: movieNames});
+
     });
   };
 

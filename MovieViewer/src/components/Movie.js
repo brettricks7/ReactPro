@@ -39,6 +39,7 @@ const styles = {
     "justify-content": "flex-end",
   },
 };
+
 class Movie extends Component {
     render() {
         return (
@@ -49,7 +50,7 @@ class Movie extends Component {
               <CardContent>
                 <Typography variant="headline" component="h2"> {this.props.name}</Typography>
                 <Typography variant="subheading" component="p" className={this.props.classes.content}>
-                  Lorem ipsum dolor sit amet, ad per diceret aliquam fabellas, ut lorem populo pro. Has unum etiam indoctum te, ea eius euripidis usu, sea delenit rationibus constituto eu. Cu his cibo vocent laboramus, ne unum accumsan mei.
+                  {this.props.overview}
                 </Typography>
               </CardContent>
               <CardActions className={this.props.classes.actions}>
