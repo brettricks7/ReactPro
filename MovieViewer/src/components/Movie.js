@@ -9,10 +9,9 @@ const styles = {
   card: {
     display: 'flex',
     "flex-direction": "row",
-    width: "60vw",
+    width: "800px",
     margin: "auto",
-    "min-width": "600px",
-    "min-height": "250px",
+    "height": "350px",
     "font-size": "calc( 14px + 8 * ((100vw - 500px) / 1500))",
   },
   tile: {
@@ -20,23 +19,37 @@ const styles = {
     "flex-direction": "column",
     "align-items": "stretch",
     "flex": "1 auto",
+    'min-height': '350px',
+    'width': "540px",
+    'padding': 'auto',
+    // 'overflow': 'hidden',
+    // 'white-space': 'nowrap',
   },
   media: {
-    "min-height": "23vw",
-    "min-width": "17.25vw",
+    "height": "350px",
+    "width": "260px",
+
   },
   actions: {
+    display: 'flex',
     "flex-direction": "row",
+    // alignItems: 'center',
+    // alignContent: 'center',
   },
   content: {
-    "min-height": "15vh",
-    "min-width": "42.75vw",
+    "min-height": "225px",
+    "width": "500px",
+    padding: "10px 10px 10px 10px",
   },
   controls: {
     "display": 'flex',
     alignItems: 'center',
-    "flex-grow": 1,
+    // "flex-grow": 1,
     "justify-content": "flex-end",
+  },
+  info: {
+    width: "800px",
+    height: "350px",
   },
 };
 
@@ -46,31 +59,32 @@ class Movie extends Component {
         <div>
           <Card className={this.props.classes.card}>
             <div className={this.props.classes.tile}>
-
-              <CardContent>
-                <Typography variant="headline" component="h2"> {this.props.name}</Typography>
-                <Typography variant="subheading" component="p" className={this.props.classes.content}>
-                  {this.props.overview}
-                </Typography>
-              </CardContent>
-              <CardActions className={this.props.classes.actions}>
-                <Button size="small" color="primary" className={this.props.classes.controls}>
-                  Add to Favorites
-                </Button>
-                <Button size="small" color="primary" className={this.props.classes.controls}>
-                  Watched
-                </Button>
-                <Button size="small" color="primary" className={this.props.classes.controls}>
-                  Trash
-                </Button>
-              </CardActions>
+              <div className={this.props.classes.info}>
+                <CardContent>
+                  <Typography variant="headline" component="h2"> {this.props.name}</Typography>
+                  <Typography variant="subheading" component="p" className={this.props.classes.content}>
+                    {this.props.overview}
+                  </Typography>
+                </CardContent>
+                <CardActions className={this.props.classes.actions}>
+                  <Button size="small" color="primary" className={this.props.classes.controls}>
+                    Add to Favorites
+                  </Button>
+                  <Button size="small" color="primary" className={this.props.classes.controls}>
+                    Watched
+                  </Button>
+                  <Button size="small" color="primary" className={this.props.classes.controls}>
+                    Trash
+                  </Button>
+                </CardActions>
+              </div>
             </div>
-        <CardMedia
-          className={this.props.classes.media}
-          image ="https://image.tmdb.org/t/p/w342/d4KNaTrltq6bpkFS01pYtyXa09m.jpg"
-          title="Movie"
-        />
-        </Card>
+            <CardMedia
+              className={this.props.classes.media}
+              image ="https://image.tmdb.org/t/p/w342/d4KNaTrltq6bpkFS01pYtyXa09m.jpg"
+              title="Movie"
+            />
+            </Card>
       </div>
       );
     }

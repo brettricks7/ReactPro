@@ -5,9 +5,9 @@ import Grid from 'material-ui/Grid';
 
 const styles = theme => ({
   root: {
-    flexGrow: 1,
-    position: "relative",
-    paddingTop: "15vh",
+    // flexGrow: 1,
+    // position: "relative",
+    paddingTop: "150px",
 
   },
 });
