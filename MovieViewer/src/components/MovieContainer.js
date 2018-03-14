@@ -22,7 +22,7 @@ class MovieContainer extends Component {
                       (movie => {
                           return (
                               <Grid key={movie.title} item xs= {12}>
-                                   <Movie name={movie.title} overview={movie.overview}/>
+                                   <Movie name={movie.title} overview={movie.overview} pic={movie.poster_path}/>
                               </Grid>
                           );
                       })

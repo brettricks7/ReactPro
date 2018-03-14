@@ -9,7 +9,7 @@ const styles = theme => ({
     display: "flex",
     marginTop: 0,
     width: "100%",
-    height: "10vh",
+    height: "100px",
     "justify-content": "center",
     "alignItems": "center",
     "font-size": "40px",

@@ -2,8 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from 'material-ui/styles';
 import TextField from 'material-ui/TextField';
-import ToggleSwitches from './ToggleSwitches.js';
 import Button from 'material-ui/Button';
+import green from 'material-ui/colors/green';
+import { FormGroup, FormControlLabel } from 'material-ui/Form';
+import Switch from 'material-ui/Switch';
 
 const styles = theme => ({
   container: {
@@ -23,39 +25,24 @@ const styles = theme => ({
   button: {
     // flexWrap: 'wrap',
   },
+  checked: {
+    color: green[500],
+    '& + $bar': {
+      backgroundColor: green[500],
+    },
+  },
+  bar: {
+  },
 });
-
-// const currencies = [
-//   {
-//     value: 'USD',
-//     label: '$',
-//   },
-//   {
-//     value: 'EUR',
-//     label: '€',
-//   },
-//   {
-//     value: 'BTC',
-//     label: '฿',
-//   },
-//   {
-//     value: 'JPY',
-//     label: '¥',
-//   },
-// ];
-
 class OpenedDrawer extends React.Component {
   state = {
-    name: 'Cat in the Hat',
-    age: '',
-    multiline: 'Controlled',
-    currency: 'EUR',
+    checkedA: true,
+    checkedB: true,
+    checkedF: true,
   };
 
   handleChange = name => event => {
-    this.setState({
-      [name]: event.target.value,
-    });
+    this.setState({ [name]: event.target.checked });
   };
 
   render() {
@@ -63,51 +50,56 @@ class OpenedDrawer extends React.Component {
 
     return (
       <form className={classes.container} noValidate autoComplete="off">
-        <ToggleSwitches/>
+        <FormGroup row>
+          <FormControlLabel
+            control={
+              <Switch
+                checked={this.state.checkedA}
+                onChange={this.handleChange('checkedA')}
+                value="checkedA"
+              />
+            }
+            label="Netflix"
+          />
+          <FormControlLabel
+            control={
+              <Switch
+                checked={this.state.checkedB}
+                onChange={this.handleChange('checkedB')}
+                value="checkedB"
+                color="primary"
+              />
+            }
+            label="Amazon"
+          />
+          <FormControlLabel
+            control={
+              <Switch
+                checked={this.state.checkedF}
+                onChange={this.handleChange('checkedF')}
+                value="checkedF"
+                classes={{
+                  checked: classes.checked,
+                  bar: classes.bar,
+                }}
+              />
+            }
+            label="Hulu"
+          />
+          </FormGroup>
+
 
         <TextField
           id="full-width"
-          label="Starts with..."
-          placeholder="The Godfa"
+          label="Search"
+          placeholder=""
           className={classes.textField}
           margin="normal"
           fullWidth
         />
-        <TextField
-          id="with-placeholder"
-          label="With placeholder"
-          placeholder="Placeholder"
-          className={classes.textField}
-          margin="normal"
-        />
-        <TextField
-          id="textarea"
-          label="With placeholder multiline"
-          placeholder="Placeholder"
-          multiline
-          className={classes.textField}
-          margin="normal"
-        />
-        <TextField
-          id="number"
-          label="Number"
-          value={this.state.age}
-          onChange={this.handleChange('age')}
-          type="number"
-          className={classes.textField}
-          InputLabelProps={{
-            shrink: true,
-          }}
-          margin="normal"
-        />
-        <TextField
-          id="search"
-          label="Search field"
-          type="search"
-          className={classes.textField}
-          margin="normal"
-        />
         <Button onClick={this.props.toggleDrawer(false)} variant="raised" color="primary" size='large' className={this.props.classes.button}>Save</Button>
+        <br/>
+        <Button onClick={this.props.toggleDrawer(false)} variant="raised" color="secondary" size='large' className={this.props.classes.button}>Cancel</Button>
       </form>
     );
   }

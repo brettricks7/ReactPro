@@ -37,7 +37,7 @@ const styles = {
     // alignContent: 'center',
   },
   content: {
-    "min-height": "225px",
+    "height": "225px",
     "width": "500px",
     padding: "10px 10px 10px 10px",
   },
@@ -81,7 +81,7 @@ class Movie extends Component {
             </div>
             <CardMedia
               className={this.props.classes.media}
-              image ="https://image.tmdb.org/t/p/w342/d4KNaTrltq6bpkFS01pYtyXa09m.jpg"
+              image ={"https://image.tmdb.org/t/p/w300" + this.props.pic}
               title="Movie"
             />
             </Card>
