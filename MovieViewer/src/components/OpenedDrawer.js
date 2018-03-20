@@ -41,8 +41,14 @@ class OpenedDrawer extends React.Component {
     checkedF: true,
   };
 
-  handleChange = name => event => {
+  handleSwitchChange = name => event => {
     this.setState({ [name]: event.target.checked });
+  };
+
+  handleChange = name => event => {
+    this.setState({
+    [name]: event.target.value,
+    });
   };
 
   render() {
@@ -55,7 +61,7 @@ class OpenedDrawer extends React.Component {
             control={
               <Switch
                 checked={this.state.checkedA}
-                onChange={this.handleChange('checkedA')}
+                onChange={this.handleSwitchChange('checkedA')}
                 value="checkedA"
               />
             }
@@ -65,7 +71,7 @@ class OpenedDrawer extends React.Component {
             control={
               <Switch
                 checked={this.state.checkedB}
-                onChange={this.handleChange('checkedB')}
+                onChange={this.handleSwitchChange('checkedB')}
                 value="checkedB"
                 color="primary"
               />
@@ -76,7 +82,7 @@ class OpenedDrawer extends React.Component {
             control={
               <Switch
                 checked={this.state.checkedF}
-                onChange={this.handleChange('checkedF')}
+                onChange={this.handleSwitchChange('checkedF')}
                 value="checkedF"
                 classes={{
                   checked: classes.checked,
@@ -88,15 +94,25 @@ class OpenedDrawer extends React.Component {
           />
           </FormGroup>
 
-
-        <TextField
-          id="full-width"
-          label="Search"
-          placeholder=""
-          className={classes.textField}
-          margin="normal"
-          fullWidth
-        />
+{/*
+          <TextField
+            id="full-width"
+            label="Search"
+            placeholder=""
+            className={classes.textField}
+            margin="normal"
+            fullWidth
+          /> */}
+          <TextField
+            id="year"
+            label="Year"
+            placeholder="2015"
+            value={this.state.year}
+            onChange={this.handleChange('year')}
+            className={classes.textField}
+            margin="normal"
+            fullWidth
+          />
         <Button onClick={this.props.toggleDrawer(false)} variant="raised" color="primary" size='large' className={this.props.classes.button}>Save</Button>
         <br/>
         <Button onClick={this.props.toggleDrawer(false)} variant="raised" color="secondary" size='large' className={this.props.classes.button}>Cancel</Button>

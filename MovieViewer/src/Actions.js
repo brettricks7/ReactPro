@@ -1,4 +1,3 @@
-import React, { Component } from 'react';
 import $ from 'jquery';
 
 export function getData() {
@@ -15,7 +14,7 @@ export function getData() {
     // console.log("response: " + response)
     return response.results.map(
       (movie => {
-        const temp = new Object();
+        const temp = {};
         temp.title = movie.title;
         temp.overview = movie.overview;
         temp.poster_path = movie.poster_path;
